@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashell's Cleaning & Laundry Services — Sterling, Rock Falls & Dixon, IL</title>
+<meta name="description" content="A cleaner space. A lighter load. Personalized house cleaning and laundry by Rashell — $30/hour, serving Sterling, Rock Falls, and Dixon, Illinois. Call or text 779-245-4134.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     Rashell's — V2 "quiet luxury" concept.
+     Mobile-first. Editorial serif + generous scale.
+     All conversion elements from V1 preserved.
+     ========================================================== */
+  :root {
+    --paper: #F7F3EA;
+    --paper-warm: #EFE9DB;
+    --ink: #2C3626;
+    --ink-soft: #5A6650;
+    --sage: #94A889;
+    --sage-ghost: #DDE4D5;
+    --white: #FFFFFF;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Jost', 'Segoe UI', sans-serif;
+    --script: 'Allura', cursive;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--sage); color: var(--paper); }
+  body {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x: hidden;
+  }
+  .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  /* Reveal-on-scroll (JS adds .in) */
+  .rv { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+  .rv.in { opacity: 1; transform: none; }
+  .rv-d1 { transition-delay: 0.1s; } .rv-d2 { transition-delay: 0.2s; } .rv-d3 { transition-delay: 0.3s; }
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    .ticker-track { animation: none !important; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  header.scrolled {
+    background: rgba(247, 243, 234, 0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 rgba(44, 54, 38, 0.08);
+  }
+  .logo {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .logo em { font-style: italic; font-weight: 400; }
+  .call-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    min-height: 48px;
+    transition: transform 0.2s;
+  }
+  .call-pill:active { transform: scale(0.97); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 110px 20px 40px;
+    position: relative;
+  }
+  .hero .eyebrow {
+    font-size: 0.82rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: clamp(3rem, 12.5vw, 7.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    max-width: 11ch;
+    margin: 0 auto;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sage);
+  }
+  .hero .sub {
+    font-size: clamp(1.1rem, 3.2vw, 1.3rem);
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin: 26px auto 0;
+    text-wrap: balance;
+  }
+  .hero .price-line {
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 4.5vw, 1.6rem);
+    margin: 26px auto 6px;
+  }
+  .hero .price-line strong { font-weight: 600; font-size: 1.35em; }
+  .hero .estimate { color: var(--ink-soft); font-size: 1rem; margin-bottom: 30px; }
+  .cta-stack { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    min-height: 58px;
+    padding: 15px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-ink { background: var(--ink); color: var(--paper); box-shadow: 0 10px 26px rgba(44,54,38,0.22); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: scale(0.98); }
+  .hero .reply-note { margin-top: 16px; font-size: 0.95rem; color: var(--ink-soft); }
+  .scroll-hint {
+    position: absolute;
+    bottom: 18px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker {
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    padding: 16px 0;
+    white-space: nowrap;
+  }
+  .ticker-track {
+    display: inline-block;
+    animation: tick 28s linear infinite;
+  }
+  .ticker span {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    margin: 0 22px;
+  }
+  .ticker .dot { color: var(--sage); }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- Sections ---------- */
+  section { padding: 84px 0; position: relative; }
+  .sec-label {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  h2 em { font-style: italic; font-weight: 300; color: var(--sage); }
+
+  /* ---------- Services (editorial rows) ---------- */
+  .svc-intro { max-width: 44ch; color: var(--ink-soft); margin-top: 18px; text-wrap: balance; }
+  .svc-rows { margin-top: 48px; border-top: 1px solid rgba(44,54,38,0.18); }
+  .svc-row {
+    border-bottom: 1px solid rgba(44,54,38,0.18);
+    padding: 34px 0;
+  }
+  .svc-row .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .svc-row h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    line-height: 1.1;
+  }
+  .svc-row .svc-meta {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .svc-row p { color: var(--ink-soft); margin-top: 12px; max-width: 54ch; }
+  .svc-row .tag {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--sage-ghost);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .not-sure {
+    margin-top: 34px;
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+  }
+  .not-sure a { font-weight: 500; color: var(--ink); }
+
+  /* ---------- Steps ---------- */
+  .steps-sec { background: var(--paper-warm); }
+  .steps { margin-top: 48px; display: grid; grid-template-columns: 1fr; gap: 0; }
+  .step {
+    padding: 30px 0;
+    border-top: 1px solid rgba(44,54,38,0.16);
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 8px 18px;
+    align-items: start;
+  }
+  .step .s-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--sage);
+  }
+  .step h3 { font-family: var(--serif); font-weight: 500; font-size: 1.45rem; }
+  .step p { color: var(--ink-soft); margin-top: 6px; grid-column: 2; font-size: 1.08rem; }
+
+  /* ---------- Manifesto ---------- */
+  .manifesto {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .manifesto .leaf {
+    position: absolute;
+    width: 220px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .manifesto .leaf.l1 { top: -40px; left: -50px; transform: rotate(20deg); }
+  .manifesto .leaf.l2 { bottom: -50px; right: -40px; transform: rotate(200deg); }
+  .manifesto .m-script {
+    font-family: var(--script);
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    color: var(--sage);
+    display: block;
+    margin-bottom: 12px;
+    padding: 0.1em 0.2em;
+  }
+  .manifesto blockquote {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(1.9rem, 7.5vw, 3.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+  .manifesto blockquote em { font-style: italic; color: var(--sage); }
+  .manifesto .m-sub { margin-top: 22px; color: rgba(247,243,234,0.75); font-size: 1.05rem; }
+
+  /* ---------- Testimonials (placeholder slots) ---------- */
+  .quotes { margin-top: 48px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .quote {
+    background: var(--white);
+    border: 1px solid rgba(44,54,38,0.1);
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 6px 22px rgba(44,54,38,0.05);
+  }
+  .quote .stars { color: var(--sage); letter-spacing: 4px; margin-bottom: 12px; font-size: 1.05rem; }
+  .quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.28rem;
+    line-height: 1.45;
+  }
+  .quote .who {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .quote.placeholder { border: 1.5px dashed var(--sage); background: transparent; box-shadow: none; }
+  .quote.placeholder p, .quote.placeholder .who { opacity: 0.55; }
+
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; margin-top: 40px; }
+  .photo-slot {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 28px 28px;
+    background: var(--sage-ghost);
+    border: 2px dashed var(--sage);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 24px;
+  }
+  .photo-slot svg { width: 60px; height: 60px; opacity: 0.55; }
+  .about-copy p { color: var(--ink-soft); margin-top: 16px; max-width: 52ch; }
+  .about-copy .sig {
+    font-family: var(--script);
+    font-size: 2.6rem;
+    color: var(--ink);
+    margin-top: 22px;
+    padding: 0.1em 0.15em;
+  }
+
+  /* ---------- Area ---------- */
+  .area-sec { background: var(--paper-warm); text-align: center; }
+  .towns { margin-top: 34px; }
+  .towns .town {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 9.5vw, 4.6rem);
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+    display: block;
+  }
+  .towns .town em { font-style: italic; font-weight: 300; color: var(--sage); font-size: 0.5em; vertical-align: middle; margin: 0 14px; }
+  .area-note { margin-top: 26px; color: var(--ink-soft); max-width: 40ch; margin-left: auto; margin-right: auto; text-wrap: balance; }
+
+  /* ---------- Contact ---------- */
+  .contact { text-align: center; padding-bottom: 100px; }
+  .big-phone {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.1rem, 9.5vw, 4.4rem);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0 8px;
+    border-bottom: 3px solid var(--sage);
+    line-height: 1.25;
+  }
+  .contact .reply-note { color: var(--ink-soft); font-size: 1rem; margin-bottom: 36px; }
+  form { max-width: 540px; margin: 0 auto; display: grid; gap: 16px; text-align: left; }
+  label { font-weight: 500; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+  input, textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid rgba(44,54,38,0.22);
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+  }
+  input:focus, textarea:focus { outline: 2px solid var(--sage); border-color: transparent; }
+  ::placeholder { color: #A8B09B; }
+  .fb-line { margin-top: 30px; color: var(--ink-soft); font-size: 1rem; }
+  .fb-line a { font-weight: 500; color: var(--ink); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 0 120px;
+    text-align: center;
+    overflow: hidden;
+  }
+  footer .foot-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(3.4rem, 16vw, 9rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    opacity: 0.95;
+  }
+  footer .foot-name em { font-style: italic; font-weight: 300; color: var(--sage); }
+  footer .foot-meta { margin-top: 22px; font-size: 0.95rem; color: rgba(247,243,234,0.75); }
+  footer a { color: var(--paper); text-decoration: none; font-weight: 500; }
+
+  /* ---------- Sticky mobile call bar ---------- */
+  .call-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--ink);
+    display: flex;
+    z-index: 50;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -4px 18px rgba(44,54,38,0.3);
+  }
+  .call-bar a {
+    flex: 1;
+    text-align: center;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 16px 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.02rem;
+  }
+  .call-bar a + a { border-left: 1px solid rgba(247,243,234,0.2); }
+  body { padding-bottom: 64px; }
+
+  /* ==========================================================
+     Tablet & desktop
+     ========================================================== */
+  @media (min-width: 640px) {
+    .cta-stack { flex-direction: row; justify-content: center; }
+    .btn { width: auto; }
+    .quotes { grid-template-columns: repeat(3, 1fr); }
+    .towns .town { display: inline; }
+  }
+  @media (min-width: 900px) {
+    section { padding: 120px 0; }
+    .call-bar { display: none; }
+    body { padding-bottom: 0; }
+    .svc-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 1.1fr;
+      gap: 24px;
+      align-items: baseline;
+    }
+    .svc-row .num { margin: 0; }
+    .svc-row p { margin-top: 0; }
+    .svc-row .tag { margin-top: 14px; }
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .step { border-top: 1px solid rgba(44,54,38,0.16); display: block; padding-top: 26px; }
+    .step .s-num { font-size: 3.4rem; display: block; margin-bottom: 14px; }
+    .step p { margin-top: 10px; }
+    .about-grid { grid-template-columns: 380px 1fr; gap: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="logo" href="#top">Rashell<span class="apos">'s</span> <em>— cleaning &amp; laundry</em></a>
+  <a class="call-pill" href="tel:7792454134">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg>
+    Call / Text
+  </a>
+</header>
+
+<section class="hero" id="top">
+  <div class="eyebrow rv">House Cleaning &amp; Laundry · Sauk Valley, Illinois</div>
+  <h1 class="rv rv-d1">Come home<br>to <em>clean.</em></h1>
+  <p class="sub rv rv-d2">A cleaner space. A&nbsp;lighter&nbsp;load. More time for what&nbsp;matters&nbsp;most.</p>
+  <div class="price-line rv rv-d2"><strong>$30</strong>/hour · 2-hour minimum</div>
+  <div class="estimate rv rv-d2">Most homes take about 2–4&nbsp;hours.</div>
+  <div class="cta-stack rv rv-d3">
+    <a class="btn btn-ink" href="tel:7792454134">Call 779-245-4134</a>
+    <a class="btn btn-ghost" href="sms:7792454134">💬 Prefer to text? Tap&nbsp;here</a>
+  </div>
+  <p class="reply-note rv rv-d3">I usually reply the same day.</p>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>$30 / hour</span><span class="dot">✦</span><span>Sterling</span><span class="dot">✦</span><span>Rock Falls</span><span class="dot">✦</span><span>Dixon</span><span class="dot">✦</span><span>Cleaning &amp; Laundry</span><span class="dot">✦</span><span>Free walk-throughs</span><span class="dot">✦</span><span>$30 / hour</span><span class="dot">✦</span><span>Sterling</span><span class="dot">✦</span><span>Rock Falls</span><span class="dot">✦</span><span>Dixon</span><span class="dot">✦</span><span>Cleaning &amp; Laundry</span><span class="dot">✦</span><span>Free walk-throughs</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="sec-label rv">Services &amp; Pricing</div>
+    <h2 class="rv">Simple, honest,<br><em>tailored to you.</em></h2>
+    <p class="svc-intro rv rv-d1">Not every clean is the same — everything is shaped around your&nbsp;home and your&nbsp;needs.</p>
+    <div class="svc-rows">
+      <div class="svc-row rv">
+        <span class="num">01</span>
+        <div>
+          <h3>Regular Cleaning</h3>
+          <div class="svc-meta">$30/hour · 2-hour minimum</div>
+        </div>
+        <div>
+          <p>Biweekly, monthly, or one-time visits. Kitchens, bathrooms, dusting, floors — kept beautifully, consistently&nbsp;yours.</p>
+          <span class="tag">One-time clean — perfect for a fresh start</span>
+        </div>
+      </div>
+      <div class="svc-row rv">
+        <span class="num">02</span>
+        <div>
+          <h3>Laundry Service</h3>
+          <div class="svc-meta">Clean spaces &amp; fresh loads</div>
+        </div>
+        <div>
+          <p>Washed, dried, folded, and put away — come home to fresh linens without touching a&nbsp;hamper.</p>
+        </div>
+      </div>
+      <div class="svc-row rv">
+        <span class="num">03</span>
+        <div>
+          <h3>Deep Cleans</h3>
+          <div class="svc-meta">Flat rates, quoted up front</div>
+        </div>
+        <div>
+          <p>Deep cleans and move in / move out cleans are bigger jobs, priced as a flat rate — you'll get your exact price at a <strong>free walk-through</strong>, before any work&nbsp;begins.</p>
+        </div>
+      </div>
+    </div>
+    <p class="not-sure rv">Not sure what you need? <a href="sms:7792454134">Text me</a> and we'll figure it out&nbsp;together.</p>
+  </div>
+</section>
+
+<section class="steps-sec" id="how">
+  <div class="container">
+    <div class="sec-label rv">The Process</div>
+    <h2 class="rv">Easy as <em>one, two, three.</em></h2>
+    <!-- PLACEHOLDER: confirm Rashell's actual process -->
+    <div class="steps">
+      <div class="step rv">
+        <div class="s-num">1</div>
+        <h3>Reach out</h3>
+        <p>Call or text with a little about your home and what you need. I usually reply the same&nbsp;day.</p>
+      </div>
+      <div class="step rv rv-d1">
+        <div class="s-num">2</div>
+        <h3>Free walk-through</h3>
+        <p>We'll look at your space together and you'll get your exact price — no surprises, no&nbsp;obligation.</p>
+      </div>
+      <div class="step rv rv-d2">
+        <div class="s-num">3</div>
+        <h3>Come home to clean</h3>
+        <p>Pick a schedule that works — weekly, biweekly, monthly, or one-time — and leave the rest to&nbsp;me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <svg class="leaf l1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#F7F3EA" stroke-width="1.4"><path d="M20 85 C35 55 55 30 85 12"/><path d="M32 62 q-14 -4 -18 -16 q14 -2 18 16z" fill="#F7F3EA"/><path d="M45 46 q-13 -6 -15 -18 q14 0 15 18z" fill="#F7F3EA"/><path d="M60 31 q-10 -8 -10 -20 q13 3 10 20z" fill="#F7F3EA"/></g></svg>
+  <svg class="leaf l2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#F7F3EA" stroke-width="1.4"><path d="M20 85 C35 55 55 30 85 12"/><path d="M32 62 q-14 -4 -18 -16 q14 -2 18 16z" fill="#F7F3EA"/><path d="M45 46 q-13 -6 -15 -18 q14 0 15 18z" fill="#F7F3EA"/></g></svg>
+  <div class="container">
+    <span class="m-script rv">Let me help you</span>
+    <blockquote class="rv rv-d1">I treat every home like it's <em>my own.</em></blockquote>
+    <p class="m-sub rv rv-d2">Careful with your things. Thorough in the details. Always&nbsp;dependable.</p>
+  </div>
+</section>
+
+<section id="kind-words">
+  <div class="container">
+    <div class="sec-label rv">Kind Words</div>
+    <h2 class="rv">From homes <em>like yours.</em></h2>
+    <!-- PLACEHOLDER TESTIMONIALS — replace with real quotes Rashell collects
+         from clients / her Facebook page. Never publish invented reviews. -->
+    <div class="quotes">
+      <div class="quote placeholder rv">
+        <div class="stars">★★★★★</div>
+        <p>"A real client quote will go right here."</p>
+        <div class="who">— Client name, Sterling</div>
+      </div>
+      <div class="quote placeholder rv rv-d1">
+        <div class="stars">★★★★★</div>
+        <p>"Another kind word from a real customer."</p>
+        <div class="who">— Client name, Rock Falls</div>
+      </div>
+      <div class="quote placeholder rv rv-d2">
+        <div class="stars">★★★★★</div>
+        <p>"Collected from Facebook recommendations."</p>
+        <div class="who">— Client name, Dixon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-label rv">About</div>
+    <h2 class="rv">Hi, I'm <em>Rashell.</em></h2>
+    <div class="about-grid">
+      <!-- PLACEHOLDER: replace with a real, friendly photo of Rashell -->
+      <div class="photo-slot rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M4.5 20c1.2-3.5 4-5.5 7.5-5.5s6.3 2 7.5 5.5"/></svg>
+        <span>Rashell's photo<br>coming soon</span>
+      </div>
+      <div class="about-copy rv rv-d1">
+        <p>I clean homes because I love the feeling of walking into a fresh, calm space — and I want you to have that feeling without lifting a&nbsp;finger.</p>
+        <p>Whether you're a busy professional who'd rather spend weekends living than scrubbing, or you just need an extra pair of hands around the house, I'm happy to&nbsp;help.</p>
+        <p>I look forward to helping you enjoy a cleaner, calmer&nbsp;home.</p>
+        <div class="sig">— Rashell</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-sec" id="area">
+  <div class="container">
+    <div class="sec-label rv">Service Area</div>
+    <h2 class="rv">Proudly serving <em>the Sauk Valley.</em></h2>
+    <div class="towns rv rv-d1">
+      <span class="town">Sterling <em>&amp;</em></span>
+      <span class="town">Rock Falls <em>&amp;</em></span>
+      <span class="town">Dixon</span>
+    </div>
+    <p class="area-note rv rv-d2">A little outside these towns? Reach out anyway — I'm happy to travel a bit further for the right&nbsp;fit.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-label rv">Get In Touch</div>
+    <h2 class="rv">Let's talk about <em>your home.</em></h2>
+    <a class="big-phone rv rv-d1" href="tel:7792454134">779-245-4134</a>
+    <p class="reply-note rv rv-d1">Call or text — whichever is easier. I&nbsp;usually reply the same&nbsp;day.</p>
+    <!-- UNVERIFIED — enable only after Rashell confirms insurance/bonding:
+    <p style="font-weight:500; margin-bottom:26px;">✓ Fully insured &amp; bonded</p>
+    -->
+    <!-- Replace YOUR_FORM_ID with a free form ID from formspree.io -->
+    <form class="rv rv-d2" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="So I can call or text you back">
+      </div>
+      <div>
+        <label for="message">How can I help?</label>
+        <textarea id="message" name="message" rows="4" placeholder="e.g., Biweekly cleaning for a 3-bedroom home in Sterling" required></textarea>
+      </div>
+      <button class="btn btn-ink" type="submit" style="width:100%; max-width:none;">Send Message</button>
+    </form>
+    <p class="fb-line rv">Found me on Facebook? <a href="#" aria-label="Rashell's Facebook page">Visit my page</a> and say hi, or share this site with someone who could use a lighter&nbsp;load.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-name">Rashell<em>'s</em></div>
+  <p class="foot-meta">Cleaning &amp; Laundry Services · Sterling, Rock Falls &amp; Dixon, IL<br><a href="tel:7792454134">779-245-4134</a> · $30/hour · 2-hour minimum</p>
+</footer>
+
+<div class="call-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:7792454134">📞 Call</a>
+  <a href="sms:7792454134">💬 Text</a>
+  <a href="#contact">✉️ Message</a>
+</div>
+
+<script>
+// Header background on scroll
+const hdr = document.getElementById('hdr');
+addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 30), { passive: true });
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
