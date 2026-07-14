@@ -184,6 +184,73 @@
   .btn:active { transform: scale(0.98); }
   .hero .phone-note { margin-top: 14px; font-size: 0.95rem; color: var(--forest-soft); }
   .hero .phone-note strong { font-weight: 500; }
+  /* Price up front: answers the #1 unknown before asking for action */
+  .price-chip {
+    display: inline-block;
+    background: var(--white);
+    border: 1.5px solid var(--sage);
+    border-radius: 999px;
+    padding: 10px 26px;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(55, 69, 47, 0.08);
+  }
+  .price-chip strong { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; }
+  .estimate-note { font-size: 1rem; color: var(--forest-soft); margin-bottom: 22px; }
+
+  /* How-it-works steps */
+  .steps { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .step {
+    background: var(--white);
+    border: 1px solid var(--sage-soft);
+    border-radius: 22px;
+    padding: 26px 22px;
+    text-align: center;
+  }
+  .step .num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.5rem;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .step h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+  }
+  .step p { color: var(--forest-soft); margin-top: 8px; font-size: 1.05rem; }
+
+  /* Decision-relief line under pricing */
+  .not-sure { text-align: center; margin-top: 28px; font-size: 1.08rem; color: var(--forest-soft); }
+  .not-sure a { color: var(--forest); font-weight: 500; }
+
+  /* Photo placeholder — swap for a real photo of Rashell */
+  .photo-slot {
+    width: min(62vw, 270px);
+    margin: 28px auto 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 26px 26px;
+    background: var(--sage-wash);
+    border: 2px dashed var(--sage);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--forest-soft);
+    font-size: 0.98rem;
+    padding: 24px;
+    text-align: center;
+  }
+  .photo-slot svg { width: 56px; height: 56px; opacity: 0.6; }
 
   /* ---------- Sections ---------- */
   section { padding: 44px 0; } /* tighter — keeps info flowing on phones */
@@ -430,6 +497,7 @@
     }
     .nav-links a:hover { color: var(--sage); }
     .cards { grid-template-columns: repeat(3, 1fr); }
+    .steps { grid-template-columns: repeat(3, 1fr); }
     .call-bar { display: none; }   /* desktop: header button covers it */
     body { padding-bottom: 0; }
     section { padding: 64px 0; }
@@ -464,14 +532,16 @@
     <div class="subtitle-2">Laundry Services</div>
     <div class="rule-heart">♥</div>
     <p class="tagline">A cleaner space. A&nbsp;lighter&nbsp;load.<br>More time for what&nbsp;matters&nbsp;most.</p>
+    <div class="price-chip"><strong>$30</strong>/hour · 2-hour minimum</div>
+    <p class="estimate-note">Most homes take about 2–4 hours.</p>
     <div class="cta-stack">
       <a class="btn btn-primary" href="tel:7792454134">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg>
-        Call or Text 779-245-4134
+        Call 779-245-4134
       </a>
-      <a class="btn btn-secondary" href="#contact">Send a Message</a>
+      <a class="btn btn-secondary" href="sms:7792454134">💬 Prefer to text? Tap here</a>
     </div>
-    <p class="phone-note">Serving <strong>Sterling · Rock Falls · Dixon</strong> and nearby</p>
+    <p class="phone-note">Serving <strong>Sterling · Rock Falls · Dixon</strong> and nearby · I&nbsp;usually reply the&nbsp;same&nbsp;day</p>
   </div>
 </section>
 
@@ -513,7 +583,35 @@
         <h3>Deep Cleans</h3>
         <div class="script-sub">Flat Rates</div>
         <div class="rule-heart">♥</div>
-        <p>Deep cleans and move in / move out cleans take longer, so rates may change — we'll discuss everything during a quick walk-through.</p>
+        <p>Deep cleans and move in / move out cleans are bigger jobs, so they're priced as a flat rate — you'll get your exact price at a <strong>free walk-through</strong>, before any work begins.</p>
+      </div>
+    </div>
+    <p class="not-sure">Not sure what you need? <a href="sms:7792454134">Text me</a> and we'll figure it out together.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="sec-head">
+      <div class="script-kicker">Easy as</div>
+      <h2>One, Two, Three</h2>
+    </div>
+    <!-- PLACEHOLDER: confirm Rashell's actual process and adjust wording -->
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Reach Out</h3>
+        <p>Call or text me with a little about your home and what you need. I usually reply the same day.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Free Walk-Through</h3>
+        <p>We'll meet, look at your space together, and you'll get your exact price — no surprises, no obligation.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Come Home to Clean</h3>
+        <p>Pick a schedule that works for you — weekly, biweekly, monthly, or one-time — and leave the rest to me.</p>
       </div>
     </div>
   </div>
@@ -549,6 +647,11 @@
       <div class="q-script">Let me help you<br>come home to clean.</div>
       <p class="q-body">I look forward to helping you enjoy a cleaner, calmer home.</p>
     </div>
+    <!-- PLACEHOLDER: replace with a real, friendly photo of Rashell (natural light, phone photo is fine) -->
+    <div class="photo-slot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M4.5 20c1.2-3.5 4-5.5 7.5-5.5s6.3 2 7.5 5.5"/></svg>
+      <span>Rashell's photo<br>coming soon</span>
+    </div>
     <p class="about-text">Hi, I'm Rashell. I treat every home like my own — careful with your things, thorough in the details, and always dependable. Whether you're a busy professional who'd rather spend weekends living than scrubbing, or you just need an extra pair of hands around the house, I'm happy to help.</p>
   </div>
 </section>
@@ -575,7 +678,11 @@
       <span class="ph-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg></span>
       779-245-4134
     </a>
-    <p class="contact-sub">Call or text — whichever is easier for you. Or send a message below.</p>
+    <p class="contact-sub">Call or text — whichever is easier for you. I&nbsp;usually reply the&nbsp;same&nbsp;day.</p>
+    <!-- UNVERIFIED — enable only after Rashell confirms insurance/bonding:
+    <p style="text-align:center; font-weight:500; margin-bottom:26px;">✓ Fully insured &amp; bonded</p>
+    -->
+
     <!-- Replace YOUR_FORM_ID with a free form ID from formspree.io -->
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div>
