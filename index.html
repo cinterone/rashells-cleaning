@@ -3,207 +3,434 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rashelle's Cleaning Service — House Cleaning in Sterling, Rock Falls & Dixon, IL</title>
-<meta name="description" content="Friendly, reliable house cleaning by Rashelle. Serving Sterling, Rock Falls, and Dixon, Illinois. Just $30/hour. Get in touch for a free quote.">
+<title>Rashell's Cleaning & Laundry Services — Sterling, Rock Falls & Dixon, IL</title>
+<meta name="description" content="A cleaner space. A lighter load. Personalized house cleaning and laundry services by Rashell — $30/hour, serving Sterling, Rock Falls, and Dixon, Illinois. Call 779-245-4134.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ============================================================
+     Mobile-first: base styles are the phone layout.
+     min-width media queries progressively enhance for tablet/desktop.
+     ============================================================ */
   :root {
-    --windex: #0B7FD4;        /* classic Windex blue */
-    --windex-deep: #085EA6;
-    --aqua: #4FC6E8;
-    --aqua-light: #C9EEFA;
-    --sky: #EAF7FD;
-    --sunny: #FFD23F;         /* squeeze-of-lemon yellow */
-    --sunny-deep: #F5B000;
-    --bubble: #FFFFFF;
-    --ink: #143A56;
+    --cream: #FAF6EF;
+    --cream-deep: #F2ECE1;
+    --sage: #97AB8D;
+    --sage-soft: #C9D4C2;
+    --sage-wash: #E8EDE3;
+    --forest: #37452F;
+    --forest-soft: #5C6B52;
+    --white: #FFFFFF;
+    --script: 'Allura', cursive;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', 'Segoe UI', Arial, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Nunito', Arial, sans-serif;
-    color: var(--ink);
-    background: var(--sky);
-    line-height: 1.6;
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--forest);
+    background: var(--cream);
+    line-height: 1.7;
+    font-size: 1.06rem; /* generous base size for readability */
   }
-  h1, h2, h3, .logo, .btn { font-family: 'Fredoka', sans-serif; }
-  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  .container { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  img, svg { max-width: 100%; }
 
-  /* Header */
+  /* ---------- Header ---------- */
   header {
-    background: var(--windex);
-    padding: 14px 0;
+    background: rgba(250, 246, 239, 0.96);
+    backdrop-filter: blur(6px);
     position: sticky;
     top: 0;
-    z-index: 10;
-    box-shadow: 0 3px 0 var(--windex-deep);
+    z-index: 20;
+    border-bottom: 1px solid var(--sage-soft);
   }
-  .nav { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 0.3px; }
-  .logo .bubble-dot { color: var(--sunny); }
-  nav a { color: var(--aqua-light); text-decoration: none; margin-left: 22px; font-size: 0.95rem; font-weight: 700; }
-  nav a:hover { color: #fff; }
-  nav a.cta {
-    background: var(--sunny);
-    color: var(--ink);
-    padding: 9px 20px;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .logo {
+    font-family: var(--script);
+    font-size: 1.9rem;
+    color: var(--forest);
+    text-decoration: none;
+    line-height: 1.1;
+    padding: 2px 4px;
+  }
+  .nav-links { display: none; } /* hidden on phones — sections flow in order anyway */
+  .call-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--forest);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 20px;
     border-radius: 999px;
-    box-shadow: 0 3px 0 var(--sunny-deep);
+    letter-spacing: 0.5px;
+    min-height: 48px; /* comfortable tap target */
   }
-  nav a.cta:hover { background: #FFDD66; color: var(--ink); }
+  .call-pill:active { transform: scale(0.98); }
 
-  /* Hero */
+  /* ---------- Hero ---------- */
   .hero {
-    background: linear-gradient(170deg, var(--windex) 0%, var(--aqua) 100%);
-    padding: 90px 0 110px;
     text-align: center;
-    color: #fff;
+    padding: 56px 0 48px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, var(--sage-wash) 0%, transparent 60%),
+      var(--cream);
+  }
+  .leaf {
+    position: absolute;
+    width: 130px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .leaf.tl { top: -20px; left: -30px; transform: rotate(15deg); }
+  .leaf.br { bottom: -25px; right: -30px; transform: rotate(200deg); }
+  .hero .house { width: 74px; margin: 0 auto 4px; opacity: 0.85; }
+  .hero h1 {
+    font-family: var(--script);
+    font-weight: 400;
+    font-size: clamp(3.4rem, 14vw, 5.5rem);
+    line-height: 1.15;
+    padding: 0 0.2em;
+  }
+  .hero .subtitle-1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--sage);
+    font-size: clamp(1.25rem, 4.5vw, 1.9rem);
+    text-transform: uppercase;
+  }
+  .hero .subtitle-2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-size: clamp(1.35rem, 5vw, 2.1rem);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .rule-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--sage);
+    margin: 10px auto 16px;
+    max-width: 320px;
+  }
+  .rule-heart::before, .rule-heart::after {
+    content: "";
+    height: 1px;
+    background: var(--sage-soft);
+    flex: 1;
+  }
+  .hero .tagline {
+    font-family: var(--script);
+    font-size: clamp(1.7rem, 6.5vw, 2.4rem);
+    color: var(--forest-soft);
+    line-height: 1.45;
+    max-width: 560px;
+    margin: 0 auto 30px;
+    padding: 0 8px;
+  }
+  .cta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 340px;
+    min-height: 56px; /* big tap targets */
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1.12rem;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .btn-primary {
+    background: var(--forest);
+    color: var(--cream);
+    box-shadow: 0 6px 18px rgba(55, 69, 47, 0.25);
+  }
+  .btn-secondary {
+    background: var(--white);
+    color: var(--forest);
+    border: 1.5px solid var(--sage);
+  }
+  .btn:active { transform: scale(0.98); }
+  .hero .phone-note { margin-top: 14px; font-size: 0.95rem; color: var(--forest-soft); }
+  .hero .phone-note strong { font-weight: 500; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0; }
+  .sec-head { text-align: center; margin-bottom: 34px; }
+  .sec-head .script-kicker {
+    font-family: var(--script);
+    font-size: clamp(2.1rem, 8vw, 2.9rem);
+    color: var(--sage);
+    line-height: 1.2;
+  }
+  .sec-head h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+    line-height: 1.3;
+  }
+  .sec-head p { max-width: 520px; margin: 12px auto 0; color: var(--forest-soft); }
+
+  /* ---------- Pricing cards ---------- */
+  .cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--sage-soft);
+    border-radius: 22px;
+    padding: 34px 26px 30px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(55, 69, 47, 0.06);
+    position: relative;
+  }
+  .card .badge {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -72px auto 16px;
+    border: 6px solid var(--cream);
+  }
+  .card .badge svg { width: 36px; height: 36px; }
+  .card .price {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1;
+  }
+  .card .price small { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); display: block; margin-top: 4px; font-weight: 600; }
+  .card h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  .card .script-sub {
+    font-family: var(--script);
+    font-size: 1.7rem;
+    color: var(--forest-soft);
+    line-height: 1.2;
+  }
+  .card p { color: var(--forest-soft); margin-top: 12px; font-size: 1rem; }
+  .card .mini-note {
+    margin-top: 16px;
+    background: var(--sage-wash);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .card ul { list-style: none; margin-top: 12px; color: var(--forest-soft); font-size: 1rem; }
+  .card ul li { padding: 4px 0; }
+
+  /* ---------- Values strip ---------- */
+  .values { background: var(--cream-deep); }
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 14px;
+    text-align: center;
+  }
+  .value .v-icon {
+    width: 58px; height: 58px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--sage);
+    color: var(--forest);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .value .v-icon svg { width: 26px; height: 26px; }
+  .value p {
+    font-size: 0.88rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* ---------- About ---------- */
+  .about { text-align: center; }
+  .about-quote {
+    background: var(--sage);
+    color: var(--cream);
+    border-radius: 28px;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 44px 30px;
     position: relative;
     overflow: hidden;
   }
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    text-shadow: 0 3px 0 rgba(8, 94, 166, 0.35);
+  .about-quote .leaf { opacity: 0.18; width: 150px; }
+  .about-quote .q-script {
+    font-family: var(--script);
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.3;
+    position: relative;
   }
-  .hero h1 em { color: var(--sunny); font-style: normal; }
-  .hero p.sub { font-size: 1.2rem; max-width: 560px; margin: 0 auto 30px; color: var(--sky); font-weight: 600; }
-  .btn {
-    display: inline-block;
-    background: var(--sunny);
-    color: var(--ink);
-    padding: 15px 38px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 0 var(--sunny-deep);
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--sunny-deep); }
-  .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--sunny-deep); }
-  .price-badge {
-    display: inline-block;
-    margin-top: 26px;
-    background: rgba(255,255,255,0.95);
-    color: var(--ink);
+  .about-quote .q-body { margin-top: 14px; font-size: 1.02rem; position: relative; }
+  .about-text { max-width: 600px; margin: 30px auto 0; color: var(--forest-soft); }
+
+  /* ---------- Area ---------- */
+  .area-list { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .pill {
+    background: var(--white);
+    border: 1.5px solid var(--sage);
     border-radius: 999px;
     padding: 10px 26px;
-    font-size: 1rem;
-    font-weight: 700;
-    transform: rotate(-2deg);
-    box-shadow: 0 4px 12px rgba(8,94,166,0.3);
-  }
-  .price-badge strong { color: var(--windex); font-size: 1.3rem; font-family: 'Fredoka', sans-serif; }
-
-  /* Decorative bubbles */
-  .bubbles span {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.18);
-    border: 2px solid rgba(255,255,255,0.35);
-    animation: float 7s ease-in-out infinite;
-  }
-  .bubbles span:nth-child(1){ width:70px; height:70px; left:8%;  top:20%; animation-delay:0s; }
-  .bubbles span:nth-child(2){ width:34px; height:34px; left:16%; top:65%; animation-delay:1.2s; }
-  .bubbles span:nth-child(3){ width:52px; height:52px; right:10%; top:25%; animation-delay:0.6s; }
-  .bubbles span:nth-child(4){ width:26px; height:26px; right:20%; top:60%; animation-delay:1.8s; }
-  .bubbles span:nth-child(5){ width:44px; height:44px; right:32%; top:12%; animation-delay:2.4s; }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
-  }
-
-  /* Wavy divider */
-  .wave { display: block; width: 100%; margin-top: -1px; }
-
-  /* Sections */
-  section { padding: 64px 0; }
-  h2 { font-size: 2.1rem; font-weight: 600; text-align: center; margin-bottom: 12px; color: var(--windex-deep); }
-  .section-sub { text-align: center; color: #4A6B85; max-width: 540px; margin: 0 auto 40px; font-weight: 600; }
-
-  /* Services */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-  .card {
-    background: var(--bubble);
-    border-radius: 20px;
-    padding: 28px 24px;
-    border: 3px solid var(--aqua-light);
-    box-shadow: 0 5px 0 var(--aqua-light);
-    transition: transform 0.15s;
-  }
-  .card:hover { transform: translateY(-4px) rotate(-0.5deg); }
-  .card .icon {
-    font-size: 1.7rem;
-    background: var(--sky);
-    width: 56px; height: 56px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 14px;
-  }
-  .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; color: var(--windex); }
-  .card p { font-size: 0.93rem; color: #4A6B85; }
-
-  /* About */
-  .about { background: var(--windex); color: #fff; }
-  .about h2 { color: #fff; }
-  .about-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-  .about-inner p { margin-bottom: 14px; color: var(--sky); font-weight: 600; }
-
-  /* Area */
-  .area-list { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
-  .pill {
-    background: var(--bubble);
-    border: 3px solid var(--aqua);
-    border-radius: 999px;
-    padding: 9px 26px;
-    font-weight: 800;
-    color: var(--windex-deep);
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     font-size: 1.05rem;
-    box-shadow: 0 4px 0 var(--aqua-light);
   }
-  .pill:nth-child(2) { transform: rotate(1.5deg); }
-  .pill:nth-child(3) { transform: rotate(-1.5deg); }
-  .area-note { text-align: center; color: #4A6B85; margin-top: 20px; font-size: 0.95rem; font-weight: 600; }
+  .area-note { text-align: center; color: var(--forest-soft); margin-top: 18px; font-size: 0.98rem; padding: 0 12px; }
 
-  /* Contact */
-  .contact { background: var(--bubble); }
-  form { max-width: 520px; margin: 0 auto; display: grid; gap: 14px; }
-  label { font-weight: 800; font-size: 0.9rem; color: var(--windex-deep); }
+  /* ---------- Contact ---------- */
+  .contact { background: var(--cream-deep); }
+  .contact-script {
+    font-family: var(--script);
+    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .big-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--forest);
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2rem, 9vw, 2.9rem);
+    letter-spacing: 1px;
+    margin: 6px auto 8px;
+  }
+  .big-phone .ph-icon {
+    width: 52px; height: 52px;
+    background: var(--forest);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .big-phone .ph-icon svg { width: 24px; height: 24px; }
+  .contact-sub { text-align: center; color: var(--forest-soft); font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase; max-width: 420px; margin: 0 auto 30px; }
+  form { max-width: 520px; margin: 0 auto; display: grid; gap: 16px; }
+  label { font-weight: 500; font-size: 0.92rem; letter-spacing: 1.5px; text-transform: uppercase; }
   input, textarea {
     width: 100%;
-    padding: 12px 14px;
-    border: 2.5px solid var(--aqua-light);
+    padding: 15px 16px;
+    border: 1.5px solid var(--sage-soft);
     border-radius: 14px;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 600;
-    background: var(--sky);
-    color: var(--ink);
+    font-size: 1.05rem; /* ≥16px prevents iOS zoom-on-focus */
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--forest);
   }
-  input:focus, textarea:focus { outline: none; border-color: var(--windex); background: #fff; }
-  ::placeholder { color: #7FA6C2; }
-  .email-alt { text-align: center; margin-top: 22px; color: #4A6B85; font-size: 0.95rem; font-weight: 600; }
-  .email-alt a { color: var(--windex); font-weight: 800; }
+  input:focus, textarea:focus { outline: 2px solid var(--sage); border-color: transparent; }
+  ::placeholder { color: #A9B3A0; }
+  .fb-line { text-align: center; margin-top: 26px; color: var(--forest-soft); font-size: 0.98rem; }
+  .fb-line a { color: var(--forest); font-weight: 500; }
 
   footer {
-    background: var(--windex-deep);
-    color: var(--aqua-light);
+    background: var(--forest);
+    color: var(--sage-wash);
     text-align: center;
-    padding: 26px 0;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 34px 20px;
+    font-size: 0.92rem;
   }
+  footer .f-script { font-family: var(--script); font-size: 2rem; color: var(--cream); line-height: 1.3; margin-bottom: 4px; }
+  footer a { color: var(--cream); text-decoration: none; font-weight: 500; }
 
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 2.2rem; }
-    nav a:not(.cta) { display: none; }
+  /* ---------- Sticky mobile call bar ---------- */
+  .call-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--forest);
+    display: flex;
+    z-index: 30;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -4px 16px rgba(55,69,47,0.25);
+  }
+  .call-bar a {
+    flex: 1;
+    text-align: center;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 15px 8px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.02rem;
+  }
+  .call-bar a + a { border-left: 1px solid rgba(250,246,239,0.25); }
+  body { padding-bottom: 62px; } /* room for the call bar */
+
+  /* ============================================================
+     Tablet & up
+     ============================================================ */
+  @media (min-width: 640px) {
+    .values-grid { grid-template-columns: repeat(4, 1fr); }
+    .cta-stack { flex-direction: row; justify-content: center; }
+    .btn { width: auto; }
+  }
+  @media (min-width: 820px) {
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+      color: var(--forest);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 8px 2px;
+    }
+    .nav-links a:hover { color: var(--sage); }
+    .cards { grid-template-columns: repeat(3, 1fr); }
+    .call-bar { display: none; }   /* desktop: header button covers it */
+    body { padding-bottom: 0; }
+    section { padding: 76px 0; }
   }
 </style>
 </head>
@@ -211,52 +438,124 @@
 
 <header>
   <div class="container nav">
-    <a class="logo" href="#">Rashelle's Cleaning Service<span class="bubble-dot"> ✦</span></a>
-    <nav>
-      <a href="#services">Services</a>
+    <a class="logo" href="#top">Rashell's</a>
+    <nav class="nav-links">
+      <a href="#pricing">Services &amp; Pricing</a>
       <a href="#about">About</a>
       <a href="#area">Service Area</a>
-      <a class="cta" href="#contact">Get a Quote</a>
     </nav>
+    <a class="call-pill" href="tel:7792454134">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg>
+      Call / Text
+    </a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="bubbles"><span></span><span></span><span></span><span></span><span></span></div>
+<section class="hero" id="top">
+  <svg class="leaf tl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#97AB8D" stroke-width="1.6"><path d="M20 85 C35 55 55 30 85 12"/><path d="M32 62 q-14 -4 -18 -16 q14 -2 18 16z" fill="#C9D4C2"/><path d="M45 46 q-13 -6 -15 -18 q14 0 15 18z" fill="#C9D4C2"/><path d="M60 31 q-10 -8 -10 -20 q13 3 10 20z" fill="#C9D4C2"/><path d="M38 70 q16 2 24 -8 q-12 -8 -24 8z" fill="#E8EDE3"/><path d="M52 53 q15 0 21 -11 q-13 -6 -21 11z" fill="#E8EDE3"/></g></svg>
+  <svg class="leaf br" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#97AB8D" stroke-width="1.6"><path d="M20 85 C35 55 55 30 85 12"/><path d="M32 62 q-14 -4 -18 -16 q14 -2 18 16z" fill="#C9D4C2"/><path d="M45 46 q-13 -6 -15 -18 q14 0 15 18z" fill="#C9D4C2"/><path d="M60 31 q-10 -8 -10 -20 q13 3 10 20z" fill="#C9D4C2"/></g></svg>
   <div class="container">
-    <h1>Squeaky clean home,<br><em>zero effort</em> for you.</h1>
-    <p class="sub">Friendly, dependable house cleaning in the Sauk Valley — done with care, like it's my own home.</p>
-    <a class="btn" href="#contact">Request a Free Quote 🧼</a>
-    <div><span class="price-badge">Simple pricing: <strong>$30/hour</strong> — no surprises!</span></div>
+    <svg class="house" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#97AB8D" stroke-width="2.4" stroke-linecap="round"><path d="M15 75 L15 42 L50 12 L85 42 L85 75"/><path d="M68 27 L68 16 L76 16 L76 34"/><rect x="60" y="38" width="12" height="10"/><path d="M60 43 h12 M66 38 v10"/></g></svg>
+    <h1>Rashell's</h1>
+    <div class="subtitle-1">Cleaning &amp;</div>
+    <div class="subtitle-2">Laundry Services</div>
+    <div class="rule-heart">♥</div>
+    <p class="tagline">A cleaner space. A lighter load.<br>More time for what matters most.</p>
+    <div class="cta-stack">
+      <a class="btn btn-primary" href="tel:7792454134">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg>
+        Call or Text 779-245-4134
+      </a>
+      <a class="btn btn-secondary" href="#contact">Send a Message</a>
+    </div>
+    <p class="phone-note">Serving <strong>Sterling · Rock Falls · Dixon</strong> and nearby</p>
   </div>
 </section>
-<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,0 L0,0 Z" fill="#4FC6E8"/></svg>
 
-<section id="services">
+<section id="pricing">
   <div class="container">
-    <h2>What I Can Do for You</h2>
-    <p class="section-sub">Every home is different — tell me what you need and we'll make a plan together.</p>
-    <div class="cards">
-      <div class="card"><div class="icon">🧹</div><h3>Regular Cleaning</h3><p>Weekly, bi-weekly, or monthly visits — dusting, vacuuming, mopping, kitchens, and bathrooms.</p></div>
-      <div class="card"><div class="icon">✨</div><h3>Deep Cleaning</h3><p>Top-to-bottom refresh: baseboards, inside appliances, and all the spots that get overlooked.</p></div>
-      <div class="card"><div class="icon">📦</div><h3>Move In / Move Out</h3><p>Leave your old place spotless or start fresh in your new one.</p></div>
-      <div class="card"><div class="icon">🎉</div><h3>One-Time & Occasions</h3><p>Getting ready for guests, holidays, or just need a reset? I've got you covered.</p></div>
+    <div class="sec-head">
+      <div class="script-kicker">Simple, honest</div>
+      <h2>Services &amp; Pricing</h2>
+      <p>Not every clean is the same — everything is tailored to your needs and your space.</p>
+    </div>
+    <div class="cards" style="margin-top: 56px;">
+      <div class="card">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="price">$30<small>per hour</small></div>
+        <div class="rule-heart">♥</div>
+        <h3>2 Hour Minimum</h3>
+        <ul>
+          <li>Maintenance cleans</li>
+          <li>Biweekly &amp; monthly</li>
+          <li>One-time cleans available</li>
+        </ul>
+        <div class="mini-note">One-time clean — perfect for a fresh start!</div>
+      </div>
+      <div class="card">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11 L12 4 L21 11"/><path d="M5 10v10h14V10"/><path d="M12 11.5c-1.2-1.7-4-1-3.4 1.2.4 1.5 3.4 3.3 3.4 3.3s3-1.8 3.4-3.3c.6-2.2-2.2-2.9-3.4-1.2z" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Personalized Cleaning</h3>
+        <div class="rule-heart">♥</div>
+        <p>Not every clean is the same. I tailor each clean to your needs and your space.</p>
+        <p>Kitchens, bathrooms, dusting, floors — plus <strong>laundry service</strong> for clean spaces and fresh loads.</p>
+      </div>
+      <div class="card">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/><path d="M5 15l.6 1.6L7.2 17l-1.6.6L5 19.2 4.4 17.6 2.8 17l1.6-.4z"/></svg>
+        </div>
+        <h3>Deep Cleans</h3>
+        <div class="script-sub">Flat Rates</div>
+        <div class="rule-heart">♥</div>
+        <p>Deep cleans and move in / move out cleans take longer, so rates may change — we'll discuss everything during a quick walk-through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <div class="values-grid">
+      <div class="value">
+        <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21C7 17 4 13.5 4 9.5 4 6.5 6.5 4 9.5 4c1 0 2 .5 2.5 1C12.5 4.5 13.5 4 14.5 4 17.5 4 20 6.5 20 9.5c0 4-3 7.5-8 11.5z" transform="scale(0.9) translate(1.3,1.3)"/><path d="M8 13 q4 2 8 -4"/></svg></div>
+        <p>Attention to Detail</p>
+      </div>
+      <div class="value">
+        <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="9" rx="1.5"/><path d="M4 13.5h16M4 16.5h16M7 10V7.5a2 2 0 012-2h6a2 2 0 012 2V10"/></svg></div>
+        <p>Clean Spaces &amp; Fresh Loads</p>
+      </div>
+      <div class="value">
+        <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <p>Trustworthy &amp; Reliable</p>
+      </div>
+      <div class="value">
+        <div class="v-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20C7 16 4 12.8 4 9.2 4 6.6 6 4.5 8.5 4.5c1.4 0 2.7.7 3.5 1.8.8-1.1 2.1-1.8 3.5-1.8C18 4.5 20 6.6 20 9.2c0 3.6-3 6.8-8 10.8z"/></svg></div>
+        <p>Care You Can Count On</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="about" class="about">
-  <div class="container about-inner">
-    <h2>Hi, I'm Rashelle 👋</h2>
-    <p>I clean homes because I love the feeling of walking into a fresh, tidy space — and I want you to have that feeling without lifting a finger.</p>
-    <p>I treat every home like my own: careful with your things, thorough in the details, and always dependable. Whether it's a one-time deep clean or a regular visit, you can count on me to show up and do it right.</p>
+  <div class="container">
+    <div class="about-quote">
+      <svg class="leaf tl" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#FAF6EF" stroke-width="1.6"><path d="M20 85 C35 55 55 30 85 12"/><path d="M32 62 q-14 -4 -18 -16 q14 -2 18 16z" fill="#FAF6EF"/><path d="M45 46 q-13 -6 -15 -18 q14 0 15 18z" fill="#FAF6EF"/></g></svg>
+      <div class="q-script">Let me help you<br>come home to clean.</div>
+      <p class="q-body">I look forward to helping you enjoy a cleaner, calmer home.</p>
+    </div>
+    <p class="about-text">Hi, I'm Rashell. I treat every home like my own — careful with your things, thorough in the details, and always dependable. Whether you're a busy professional who'd rather spend weekends living than scrubbing, or you just need an extra pair of hands around the house, I'm happy to help.</p>
   </div>
 </section>
 
 <section id="area">
   <div class="container">
-    <h2>Where I Work</h2>
-    <p class="section-sub">Proudly serving the Sauk Valley area:</p>
+    <div class="sec-head">
+      <div class="script-kicker">Proudly serving</div>
+      <h2>The Sauk Valley</h2>
+    </div>
     <div class="area-list">
       <span class="pill">Sterling</span>
       <span class="pill">Rock Falls</span>
@@ -268,31 +567,44 @@
 
 <section id="contact" class="contact">
   <div class="container">
-    <h2>Get a Free Quote</h2>
-    <p class="section-sub">Tell me a bit about your home and what you're looking for — I'll get back to you soon.</p>
+    <div class="contact-script">Contact Me!</div>
+    <a class="big-phone" href="tel:7792454134">
+      <span class="ph-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01z"/></svg></span>
+      779-245-4134
+    </a>
+    <p class="contact-sub">Call or text — whichever is easier for you. Or send a message below.</p>
     <!-- Replace YOUR_FORM_ID with a free form ID from formspree.io -->
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div>
         <label for="name">Name</label>
-        <input id="name" type="text" name="name" required>
+        <input id="name" type="text" name="name" autocomplete="name" required>
       </div>
       <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required>
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="So I can call or text you back">
       </div>
       <div>
-        <label for="message">What do you need?</label>
-        <textarea id="message" name="message" rows="5" placeholder="e.g., Bi-weekly cleaning for a 3-bedroom house in Sterling" required></textarea>
+        <label for="message">How can I help?</label>
+        <textarea id="message" name="message" rows="4" placeholder="e.g., Biweekly cleaning for a 3-bedroom home in Sterling" required></textarea>
       </div>
-      <button class="btn" type="submit">Send Message ✨</button>
+      <button class="btn btn-primary" type="submit" style="width:100%; max-width:none;">Send Message</button>
     </form>
-    <p class="email-alt">Prefer email? Reach me at <a href="mailto:rashelle@example.com">rashelle@example.com</a></p>
+    <p class="fb-line">Found me on Facebook? That's where most of my clients come from — <a href="#" aria-label="Rashell's Facebook page">visit my page</a> and say hi, or share this site with someone who could use a lighter load.</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Rashelle's Cleaning Service · Sterling, Rock Falls & Dixon, IL · $30/hour</p>
+  <div class="f-script">Rashell's</div>
+  <p>Cleaning &amp; Laundry Services · Sterling, Rock Falls &amp; Dixon, IL</p>
+  <p><a href="tel:7792454134">779-245-4134</a> · $30/hour · 2 hour minimum</p>
 </footer>
+
+<!-- Sticky call/text bar: phones only -->
+<div class="call-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:7792454134">📞 Call</a>
+  <a href="sms:7792454134">💬 Text</a>
+  <a href="#contact">✉️ Message</a>
+</div>
 
 </body>
 </html>
